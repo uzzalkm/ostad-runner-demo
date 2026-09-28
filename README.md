@@ -1,11 +1,16 @@
-# uk-self-hosted
 #monitoring-ci-assignment/
+
+# assignment -6 batch -14,devOps
+ -student: Uzzal Kumar Modak
+
+## file structure
 ├── README.md
 │
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
+│       └── build_self_runner.yml
+        └── ci.yml
 │
 ├── screenshots/
 │   ├── 01 node_exporter_running.png
@@ -21,5 +26,5 @@
 │   └── 11 alloy_enable.png
 │   └── 12 alloy_version.png
 │
-└── sample-app/
-    └── ...
+└── index.php
+    
