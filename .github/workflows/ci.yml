@@ -1,0 +1,49 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test-artifact:
+
+    runs-on:
+      - ostad-runner
+      - linux
+      - x64
+
+    steps:
+
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          echo "Starting build..."
+          mkdir -p build
+          echo "Build successful" > build/build-output.txt
+          echo "Build completed."
+
+      - name: Test
+        run: |
+          echo "Running tests..."
+          test -f build/build-output.txt
+          grep -q "Build successful" build/build-output.txt
+          echo "Tests passed."
+
+      - name: Generate Artifact
+        run: |
+          mkdir -p artifact
+          cp -r build/* artifact/
+          echo "Artifact generated."
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: artifact/
