@@ -9,7 +9,7 @@
 │
 ├── .github/
 │   └── workflows/
-│       └── build_self_runner.yml
+│       └── build_self_host_runner.yml
         └── ci.yml
 │
 ├── screenshots/
