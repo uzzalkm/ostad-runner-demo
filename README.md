@@ -2,6 +2,8 @@
 
 # assignment -6 batch -14,devOps
  -student: Uzzal Kumar Modak
+ -batch: 14
+ -course:DevOps
 
 ## file structure
 ├── README.md
